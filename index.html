@@ -1,0 +1,60 @@
+<html>
+	<head>
+		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+		<script type="text/javascript" src="dirtyformwatcher.js"></script>
+	</head>
+	<body>
+		<form dfw>
+			<fieldset>
+				<label for="foo">Foo</label>
+				<input name="foo" type="textbox" id="foo" value="foo" /> <br/>
+				<br />
+				<label for="bar">Bar</label>
+				<input name="bar" type="textbox" id="bar" value="bar" /> <br/>
+				<br />
+				<label for="f">F</label>
+				<input name="fxnbop" value="f" type="radio" id="f"> <br/>
+				<label for="x">X</label>
+				<input name="fxnbop" value="x" type="radio" id="x"> <br/>
+				<label for="n">N</label>
+				<input name="fxnbop" value="n" type="radio" id="n" checked> <br/>
+				<label for="b">B</label>
+				<input name="fxnbop" value="b" type="radio" id="b"> <br/>
+				<label for="o">O</label>
+				<input name="fxnbop" value="o" type="radio" id="o"> <br/>
+				<label for="p">P</label>
+				<input name="fxnbop" value="p" type="radio" id="p"> <br/>
+				<input type="submit" />
+			</fieldset>
+		</form>
+
+		<form class="watched">
+			<fieldset>
+				<label for="f">F</label>
+				<input name="fxnbop" value="f" type="radio" id="f"> <br/>
+				<label for="x">X</label>
+				<input name="fxnbop" value="x" type="radio" id="x"> <br/>
+				<label for="n">N</label>
+				<input name="fxnbop" value="n" type="radio" id="n"> <br/>
+				<label for="b">B</label>
+				<input name="fxnbop" value="b" type="radio" id="b"> <br/>
+				<label for="o">O</label>
+				<input name="fxnbop" value="o" type="radio" id="o"> <br/>
+				<label for="p">P</label>
+				<input name="fxnbop" value="p" type="radio" id="p" checked> <br/>
+				<input type="submit" />
+			</fieldset>
+		</form>
+
+		<a href="index.html">Link should warn user if a form is dirty</a>
+
+		<script>
+			$(document).ready(function () {
+				$('.watched').each(function (item, element){
+					dfw.watch(element);
+				});
+			});
+		</script>
+	</body>
+
+</html>
